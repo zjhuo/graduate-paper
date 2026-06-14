@@ -1,0 +1,9 @@
+﻿run_date=2026-06-12
+purpose=Vivado post-route power estimate for fixed/simulated response-source main chain (Z7 Lite board-level initial debug / board bring-up baseline)
+tool_path=D:\QMDownload\Vivado\2018.3\bin\vivado.bat
+tool_version_hint=Vivado 2018.3
+checkpoint_path=D:\zijin\rtl\impl_z7_lite_bringup_post_route.dcp
+tcl_script_path=D:\霍子衿\gpt\实验\report_power_z7_lite_bringup_2026-06-12.tcl
+stdout_log_path=D:\zijin\power_runs\z7_lite_bringup_post_route_2026-06-12\report_power_stdout.log
+report_file_path=D:\zijin\power_runs\z7_lite_bringup_post_route_2026-06-12\report_power.rpt
+notes=Vector-less power estimation; fixed/simulated response-source baseline, not real PUF frontend.

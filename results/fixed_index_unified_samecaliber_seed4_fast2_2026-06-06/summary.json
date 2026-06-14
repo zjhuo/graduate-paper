@@ -1,0 +1,1152 @@
+{
+  "profile_dir": "D:\\zijin\\results\\device_profile\\v4_noise_w2_p20",
+  "raw_csv": "D:\\zijin\\results\\apuf64_capture_2026-05-24_v7_noise_w2_p35_seed4_c8_n2048_r16.csv",
+  "enhanced_csv": "D:\\zijin\\results\\apuf64_enhanced_capture_2026-05-24_v3_enhanced_noise_w2_p35_seed4_c8_n2048_r16.csv",
+  "top_k": 256,
+  "rules": {
+    "score_only": "稳定性 Top-K",
+    "balanced_per_device": "稳定性+均衡",
+    "cross_condition": "跨噪声一致性",
+    "recovery_oriented": "根密钥恢复导向规则"
+  },
+  "protocol_equivalence_checked": [
+    {
+      "rule_key": "score_only",
+      "device_id": "device_000"
+    },
+    {
+      "rule_key": "balanced_per_device",
+      "device_id": "device_000"
+    },
+    {
+      "rule_key": "cross_condition",
+      "device_id": "device_000"
+    },
+    {
+      "rule_key": "recovery_oriented",
+      "device_id": "device_000"
+    }
+  ],
+  "material_summary": {
+    "score_only": {
+      "rule_name": "score_only",
+      "uniformity_mean": 0.51220703125,
+      "enroll_reliability_mean": 1.0,
+      "validate_reliability_mean": 0.998748779296875,
+      "cross_condition_min_reliability_mean": 0.998748779296875,
+      "per_device": [
+        {
+          "device_id": "device_000",
+          "uniformity": 0.54296875,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.999267578125,
+          "cross_condition_min_reliability_mean": 0.999267578125
+        },
+        {
+          "device_id": "device_001",
+          "uniformity": 0.40234375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.999267578125,
+          "cross_condition_min_reliability_mean": 0.999267578125
+        },
+        {
+          "device_id": "device_002",
+          "uniformity": 0.296875,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998779296875,
+          "cross_condition_min_reliability_mean": 0.998779296875
+        },
+        {
+          "device_id": "device_003",
+          "uniformity": 0.5390625,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.9990234375,
+          "cross_condition_min_reliability_mean": 0.9990234375
+        },
+        {
+          "device_id": "device_004",
+          "uniformity": 0.45703125,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.9970703125,
+          "cross_condition_min_reliability_mean": 0.9970703125
+        },
+        {
+          "device_id": "device_005",
+          "uniformity": 0.68359375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998291015625,
+          "cross_condition_min_reliability_mean": 0.998291015625
+        },
+        {
+          "device_id": "device_006",
+          "uniformity": 0.52734375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_007",
+          "uniformity": 0.6484375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998291015625,
+          "cross_condition_min_reliability_mean": 0.998291015625
+        }
+      ]
+    },
+    "balanced_per_device": {
+      "rule_name": "balanced_per_device",
+      "uniformity_mean": 0.5,
+      "enroll_reliability_mean": 1.0,
+      "validate_reliability_mean": 0.998748779296875,
+      "cross_condition_min_reliability_mean": 0.998748779296875,
+      "per_device": [
+        {
+          "device_id": "device_000",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.999267578125,
+          "cross_condition_min_reliability_mean": 0.999267578125
+        },
+        {
+          "device_id": "device_001",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.999267578125,
+          "cross_condition_min_reliability_mean": 0.999267578125
+        },
+        {
+          "device_id": "device_002",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998779296875,
+          "cross_condition_min_reliability_mean": 0.998779296875
+        },
+        {
+          "device_id": "device_003",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.9990234375,
+          "cross_condition_min_reliability_mean": 0.9990234375
+        },
+        {
+          "device_id": "device_004",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.9970703125,
+          "cross_condition_min_reliability_mean": 0.9970703125
+        },
+        {
+          "device_id": "device_005",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998291015625,
+          "cross_condition_min_reliability_mean": 0.998291015625
+        },
+        {
+          "device_id": "device_006",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_007",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 0.998291015625,
+          "cross_condition_min_reliability_mean": 0.998291015625
+        }
+      ]
+    },
+    "cross_condition": {
+      "rule_name": "cross_condition",
+      "uniformity_mean": 0.51025390625,
+      "enroll_reliability_mean": 1.0,
+      "validate_reliability_mean": 1.0,
+      "cross_condition_min_reliability_mean": 1.0,
+      "per_device": [
+        {
+          "device_id": "device_000",
+          "uniformity": 0.5390625,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_001",
+          "uniformity": 0.40234375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_002",
+          "uniformity": 0.29296875,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_003",
+          "uniformity": 0.5390625,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_004",
+          "uniformity": 0.44921875,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_005",
+          "uniformity": 0.6875,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_006",
+          "uniformity": 0.52734375,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_007",
+          "uniformity": 0.64453125,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        }
+      ]
+    },
+    "recovery_oriented": {
+      "rule_name": "recovery_oriented",
+      "uniformity_mean": 0.5,
+      "enroll_reliability_mean": 1.0,
+      "validate_reliability_mean": 1.0,
+      "cross_condition_min_reliability_mean": 1.0,
+      "per_device": [
+        {
+          "device_id": "device_000",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_001",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_002",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_003",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_004",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_005",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_006",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        },
+        {
+          "device_id": "device_007",
+          "uniformity": 0.5,
+          "enroll_reliability_mean": 1.0,
+          "validate_reliability_mean": 1.0,
+          "cross_condition_min_reliability_mean": 1.0
+        }
+      ]
+    }
+  },
+  "mode_results": {
+    "raw_uniform1": {
+      "score_only": {
+        "rule_name": "score_only",
+        "mode_name": "raw_uniform1",
+        "mode_display": "raw 单次采样",
+        "bit_errors": 1,
+        "bit_error_rate": 0.00048828125,
+        "zero_error_devices": 7,
+        "avg_budget_per_bit": 1.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "balanced_per_device": {
+        "rule_name": "balanced_per_device",
+        "mode_name": "raw_uniform1",
+        "mode_display": "raw 单次采样",
+        "bit_errors": 1,
+        "bit_error_rate": 0.00048828125,
+        "zero_error_devices": 7,
+        "avg_budget_per_bit": 1.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "cross_condition": {
+        "rule_name": "cross_condition",
+        "mode_name": "raw_uniform1",
+        "mode_display": "raw 单次采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 1.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "recovery_oriented": {
+        "rule_name": "recovery_oriented",
+        "mode_name": "raw_uniform1",
+        "mode_display": "raw 单次采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 1.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 1.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      }
+    },
+    "enhanced_tier3716": {
+      "score_only": {
+        "rule_name": "score_only",
+        "mode_name": "enhanced_tier3716",
+        "mode_display": "enhanced 分层采样",
+        "bit_errors": 1,
+        "bit_error_rate": 0.00048828125,
+        "zero_error_devices": 7,
+        "avg_budget_per_bit": 3.02001953125,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.01953125,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.02734375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.02734375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.01171875,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0390625,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0234375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.01171875,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "balanced_per_device": {
+        "rule_name": "balanced_per_device",
+        "mode_name": "enhanced_tier3716",
+        "mode_display": "enhanced 分层采样",
+        "bit_errors": 1,
+        "bit_error_rate": 0.00048828125,
+        "zero_error_devices": 7,
+        "avg_budget_per_bit": 3.02001953125,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.01953125,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.02734375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.02734375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.01171875,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0390625,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0234375,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.01171875,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "cross_condition": {
+        "rule_name": "cross_condition",
+        "mode_name": "enhanced_tier3716",
+        "mode_display": "enhanced 分层采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "recovery_oriented": {
+        "rule_name": "recovery_oriented",
+        "mode_name": "enhanced_tier3716",
+        "mode_display": "enhanced 分层采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      }
+    },
+    "enhanced_uniform3": {
+      "score_only": {
+        "rule_name": "score_only",
+        "mode_name": "enhanced_uniform3",
+        "mode_display": "enhanced 统一3次采样",
+        "bit_errors": 4,
+        "bit_error_rate": 0.001953125,
+        "zero_error_devices": 5,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 2,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "balanced_per_device": {
+        "rule_name": "balanced_per_device",
+        "mode_name": "enhanced_uniform3",
+        "mode_display": "enhanced 统一3次采样",
+        "bit_errors": 4,
+        "bit_error_rate": 0.001953125,
+        "zero_error_devices": 5,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 1,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 2,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "cross_condition": {
+        "rule_name": "cross_condition",
+        "mode_name": "enhanced_uniform3",
+        "mode_display": "enhanced 统一3次采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      },
+      "recovery_oriented": {
+        "rule_name": "recovery_oriented",
+        "mode_name": "enhanced_uniform3",
+        "mode_display": "enhanced 统一3次采样",
+        "bit_errors": 0,
+        "bit_error_rate": 0.0,
+        "zero_error_devices": 8,
+        "avg_budget_per_bit": 3.0,
+        "b4_recovery_ok": 8,
+        "bch31_recovery_ok": 8,
+        "b4_protocol_ok": 8,
+        "bch31_protocol_ok": 8,
+        "per_device": [
+          {
+            "device_id": "device_000",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_001",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_002",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_003",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_004",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_005",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_006",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          },
+          {
+            "device_id": "device_007",
+            "bit_errors": 0,
+            "avg_budget_per_bit": 3.0,
+            "b4_ok": true,
+            "bch31_ok": true
+          }
+        ]
+      }
+    }
+  }
+}

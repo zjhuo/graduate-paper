@@ -1,0 +1,2 @@
+﻿board_id,session_id,temperature_label,supply_label,selection_mode,challenge_index,challenge_hex,n_rep,valid_repeats,ones_count,zeros_count,aggregate_resp_bit,reference_resp_bit,unreliable_bit,raw_ber_for_challenge,aggregate_match
+board_001,session_2026_06_04_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,5,5,4,1,1,1,0,0.200000,1

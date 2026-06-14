@@ -1,0 +1,41 @@
+﻿board_id,session_id,temperature_label,supply_label,selection_mode,challenge_index,challenge_hex,repeat_index,raw_resp_bit,raw_resp_valid,reference_resp_bit,n_rep_target,notes
+board_001,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,0,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,1,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,2,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,3,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,4,0,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,0,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,1,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,2,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,3,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,4,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,0,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,1,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,2,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,3,1,1,1,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,4,0,0,1,5,invalid sample intentionally excluded
+board_001,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,0,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,1,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,2,0,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,3,1,1,0,5,synthetic self-test
+board_001,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,4,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,0,0,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,1,0,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,2,0,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,3,1,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,4,0,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,0,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,1,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,2,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,3,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,1,81487F13496E7B8A,4,1,0,0,5,invalid sample intentionally excluded
+board_002,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,0,1,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,1,1,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,2,1,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,3,0,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,2,0078F17C99A8FAC6,4,1,1,1,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,0,1,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,1,1,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,2,0,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,3,1,1,0,5,synthetic self-test
+board_002,session_synth_rt,room,nominal,global_shared,3,5BB3677199C4F3E7,4,1,1,0,5,synthetic self-test

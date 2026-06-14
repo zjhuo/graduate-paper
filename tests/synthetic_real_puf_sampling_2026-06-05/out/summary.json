@@ -1,0 +1,34 @@
+{
+  "input_files": {
+    "raw_csv": "D:\\zijin\\tests\\synthetic_real_puf_sampling_2026-06-05\\synthetic_raw_samples.csv",
+    "aggregate_csv": null,
+    "fe_auth_csv": null
+  },
+  "board_count": 2,
+  "common_challenge_count": 4,
+  "selection_modes": [
+    "global_shared"
+  ],
+  "uniqueness_label": "inter_chip_uniqueness",
+  "uniqueness_note": "基于共同 challenge set 的传统 inter-chip Hamming distance。",
+  "notes": [
+    "3~5块板只能支撑有限样本FPGA级验证，不能夸大为大规模芯片统计结论。",
+    "uniqueness必须基于共同challenge set；若使用per-device BestIdx，应改称selected response diversity。",
+    "NIST SP 800-22只能作为统计随机性补充，不能替代PUF指标或安全性证明。"
+  ],
+  "board_metrics": {
+    "board_001": {
+      "uniformity": 0.47368421052631576,
+      "reliability": 0.9,
+      "raw_ber": 0.1,
+      "aggregate_ber": 0.0
+    },
+    "board_002": {
+      "uniformity": 0.47368421052631576,
+      "reliability": 0.8500000000000001,
+      "raw_ber": 0.45,
+      "aggregate_ber": 0.5
+    }
+  },
+  "summary_rates": {}
+}

@@ -1,0 +1,82 @@
+(* ========================================================= *)
+(* IoTPUFS minimal ProVerif model v1                         *)
+(*                                                           *)
+(* Scope:                                                     *)
+(* - helper is public auxiliary data                         *)
+(* - K is a private long-term shared secret                  *)
+(* - FE is abstracted as Device locally recovering K         *)
+(* - Hamming / majority / SPONGENT rounds are not modeled    *)
+(* - No state progression, desync recovery, or timeout model *)
+(* ========================================================= *)
+
+free c: channel.
+
+(* Public registration/auxiliary data *)
+free helper_pub: bitstring.
+free device_id: bitstring.
+free v_i: bitstring.
+free c_init: bitstring.
+
+(* Domain separators *)
+free dom_sk: bitstring.
+free dom_h: bitstring.
+free dom_s: bitstring.
+
+(* Private long-term key shared by Device and Server *)
+free k_shared: bitstring [private].
+
+(* Abstract cryptographic primitives *)
+fun kdf(bitstring, bitstring, bitstring, bitstring, bitstring, bitstring): bitstring.
+fun hash(bitstring, bitstring, bitstring, bitstring, bitstring, bitstring): bitstring.
+
+(* Events *)
+event DeviceStart(bitstring, bitstring).
+event ServerStart(bitstring, bitstring, bitstring).
+event ServerAcceptDevice(bitstring, bitstring, bitstring, bitstring).
+event DeviceAcceptServer(bitstring, bitstring, bitstring, bitstring).
+
+(* Device role *)
+let Device =
+  new nonce_d: bitstring;
+  event DeviceStart(device_id, nonce_d);
+  out(c, (device_id, nonce_d));                         (* M1 *)
+  in(c, (nonce_s: bitstring, vi_rx: bitstring, ci_rx: bitstring));   (* M2 *)
+  let sk = kdf(k_shared, dom_sk, nonce_d, nonce_s, vi_rx, ci_rx) in
+  let h_tag = hash(k_shared, dom_h, nonce_d, nonce_s, vi_rx, ci_rx) in
+  out(c, (nonce_d, h_tag));                            (* M3 *)
+  in(c, s_tag_rx: bitstring);                          (* M4 *)
+  let expected_s = hash(k_shared, dom_s, nonce_d, nonce_s, vi_rx, ci_rx) in
+  if s_tag_rx = expected_s then
+    event DeviceAcceptServer(device_id, nonce_d, nonce_s, sk).
+
+(* Server role *)
+let Server =
+  in(c, (did_rx: bitstring, nonce_d_rx: bitstring));   (* M1 *)
+  if did_rx = device_id then
+    new nonce_s: bitstring;
+    event ServerStart(did_rx, nonce_d_rx, nonce_s);
+    out(c, (nonce_s, v_i, c_init));                    (* M2 *)
+    in(c, (nonce_d_back: bitstring, h_tag_rx: bitstring));   (* M3 *)
+    if nonce_d_back = nonce_d_rx then
+      let expected_h = hash(k_shared, dom_h, nonce_d_rx, nonce_s, v_i, c_init) in
+      if h_tag_rx = expected_h then
+        let sk = kdf(k_shared, dom_sk, nonce_d_rx, nonce_s, v_i, c_init) in
+        event ServerAcceptDevice(did_rx, nonce_d_rx, nonce_s, sk);
+        let s_tag = hash(k_shared, dom_s, nonce_d_rx, nonce_s, v_i, c_init) in
+        out(c, s_tag).                                 (* M4 *)
+
+(* Secrecy of session keys derived from the shared long-term key *)
+query nd: bitstring, ns: bitstring;
+      attacker(kdf(k_shared, dom_sk, nd, ns, v_i, c_init)).
+
+(* Authentication properties *)
+query did: bitstring, nd: bitstring, ns: bitstring, sk: bitstring;
+      event(ServerAcceptDevice(did, nd, ns, sk)) ==> event(DeviceStart(did, nd)).
+
+query did: bitstring, nd: bitstring, ns: bitstring, sk: bitstring;
+      event(DeviceAcceptServer(did, nd, ns, sk)) ==> event(ServerStart(did, nd, ns)).
+
+process
+  out(c, helper_pub) |
+  !Device |
+  !Server

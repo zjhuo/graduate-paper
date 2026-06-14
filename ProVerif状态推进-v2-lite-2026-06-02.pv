@@ -1,0 +1,113 @@
+(* ========================================================= *)
+(* IoTPUFS ProVerif v2-lite: state advance diagnostic model   *)
+(*                                                           *)
+(* Goal:                                                     *)
+(* - keep protocol meaning for success/failure state update  *)
+(* - remove replication/table to obtain a lightweight check  *)
+(* - success: server advances Seed_i -> Seed_next            *)
+(* - failure: server keeps current seed unchanged            *)
+(* ========================================================= *)
+
+free c_succ: channel [private].
+free c_fail: channel [private].
+
+free device_id: bitstring.
+free c_init: bitstring.
+free zero: bitstring.
+free const_u: bitstring.
+free bad_h: bitstring.
+
+free dom_seed_init: bitstring.
+free dom_v: bitstring.
+free dom_sk: bitstring.
+free dom_h: bitstring.
+free dom_s: bitstring.
+free dom_update: bitstring.
+
+free k_shared: bitstring [private].
+
+fun kdf(bitstring, bitstring, bitstring, bitstring, bitstring, bitstring): bitstring.
+fun hash(bitstring, bitstring, bitstring, bitstring, bitstring, bitstring): bitstring.
+
+event DeviceStart(bitstring, bitstring).
+event ServerStart(bitstring, bitstring, bitstring).
+event ServerSeedRead(bitstring, bitstring).
+event ServerAcceptDevice(bitstring, bitstring, bitstring, bitstring).
+event DeviceAcceptServer(bitstring, bitstring, bitstring, bitstring).
+event ServerSeedAdvance(bitstring, bitstring, bitstring, bitstring).
+event ServerRejectNoUpdate(bitstring, bitstring).
+event ServerReadAfterSuccess(bitstring, bitstring).
+event ServerReadAfterReject(bitstring, bitstring).
+
+let DeviceSuccess =
+  new nonce_d: bitstring;
+  event DeviceStart(device_id, nonce_d);
+  out(c_succ, (device_id, nonce_d));
+  in(c_succ, (nonce_s: bitstring, vi_rx: bitstring, ci_rx: bitstring));
+  let sk = kdf(k_shared, dom_sk, nonce_d, nonce_s, vi_rx, ci_rx) in
+  let h_tag = hash(k_shared, dom_h, nonce_d, nonce_s, vi_rx, ci_rx) in
+  out(c_succ, (nonce_d, h_tag));
+  in(c_succ, s_tag_rx: bitstring);
+  let expected_s = hash(k_shared, dom_s, nonce_d, nonce_s, vi_rx, ci_rx) in
+  if s_tag_rx = expected_s then
+    event DeviceAcceptServer(device_id, nonce_d, nonce_s, sk).
+
+let ServerSuccess =
+  in(c_succ, (did_rx: bitstring, nonce_d_rx: bitstring));
+  if did_rx = device_id then
+    let seed_i = kdf(k_shared, dom_seed_init, device_id, zero, zero, zero) in
+    event ServerSeedRead(did_rx, seed_i);
+    new nonce_s: bitstring;
+    let vi_tx = kdf(seed_i, dom_v, did_rx, zero, zero, zero) in
+    event ServerStart(did_rx, nonce_d_rx, nonce_s);
+    out(c_succ, (nonce_s, vi_tx, c_init));
+    in(c_succ, (nonce_d_back: bitstring, h_tag_rx: bitstring));
+    if nonce_d_back = nonce_d_rx then
+      let expected_h = hash(k_shared, dom_h, nonce_d_rx, nonce_s, vi_tx, c_init) in
+      if h_tag_rx = expected_h then
+        let sk = kdf(k_shared, dom_sk, nonce_d_rx, nonce_s, vi_tx, c_init) in
+        let seed_next = kdf(seed_i, dom_update, sk, const_u, zero, zero) in
+        event ServerAcceptDevice(did_rx, nonce_d_rx, nonce_s, sk);
+        event ServerSeedAdvance(did_rx, seed_i, seed_next, sk);
+        let s_tag = hash(k_shared, dom_s, nonce_d_rx, nonce_s, vi_tx, c_init) in
+        out(c_succ, s_tag);
+        event ServerReadAfterSuccess(did_rx, seed_next).
+
+let DeviceFailure =
+  new nonce_d: bitstring;
+  out(c_fail, (device_id, nonce_d));
+  in(c_fail, (nonce_s: bitstring, vi_rx: bitstring, ci_rx: bitstring));
+  out(c_fail, (nonce_d, bad_h)).
+
+let ServerFailure =
+  in(c_fail, (did_rx: bitstring, nonce_d_rx: bitstring));
+  if did_rx = device_id then
+    let seed_i = kdf(k_shared, dom_seed_init, device_id, zero, zero, zero) in
+    event ServerSeedRead(did_rx, seed_i);
+    new nonce_s: bitstring;
+    let vi_tx = kdf(seed_i, dom_v, did_rx, zero, zero, zero) in
+    out(c_fail, (nonce_s, vi_tx, c_init));
+    in(c_fail, (nonce_d_back: bitstring, h_tag_rx: bitstring));
+    if nonce_d_back = nonce_d_rx then
+      let expected_h = hash(k_shared, dom_h, nonce_d_rx, nonce_s, vi_tx, c_init) in
+      if h_tag_rx = expected_h then
+        0
+      else
+        event ServerRejectNoUpdate(did_rx, seed_i);
+        event ServerReadAfterReject(did_rx, seed_i).
+
+query did: bitstring, seed: bitstring, seednext: bitstring, sk: bitstring, nd: bitstring, ns: bitstring;
+      event(ServerSeedAdvance(did, seed, seednext, sk)) ==> event(ServerAcceptDevice(did, nd, ns, sk)).
+
+query did: bitstring, seed: bitstring, seednext: bitstring, sk: bitstring;
+      event(ServerReadAfterSuccess(did, seednext)) ==> event(ServerSeedAdvance(did, seed, seednext, sk)).
+
+query did: bitstring, seed: bitstring;
+      event(ServerRejectNoUpdate(did, seed)) ==> event(ServerSeedRead(did, seed)).
+
+query did: bitstring, seed: bitstring;
+      event(ServerReadAfterReject(did, seed)) ==> event(ServerRejectNoUpdate(did, seed)).
+
+process
+  (DeviceSuccess | ServerSuccess) |
+  (DeviceFailure | ServerFailure)

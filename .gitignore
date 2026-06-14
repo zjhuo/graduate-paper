@@ -1,0 +1,17 @@
+# Vivado intermediate files
+*.jou
+*.log
+*.str
+*.cache
+*.hw
+*.ip_user_files
+*.Xil
+
+# Python caches
+__pycache__/
+*.pyc
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/

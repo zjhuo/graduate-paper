@@ -1,0 +1,6 @@
+﻿model_path=D:\zijin\ProVerif状态推进-v2-lite-2026-06-02.pv
+archived_model_path=D:\zijin\proverif_runs\v2_lite_2026-06-06\model.pv
+run_date=2026-06-06
+tool_path=D:\zijin\proverif\proverif2.05\proverif.exe
+tool_version_hint=proverif2.05 (from install directory name)
+model_sha256=2CDA8823879C30C4AEA55F605664D018C6F9D8B74D6582F97FF9EFB850AD54E5

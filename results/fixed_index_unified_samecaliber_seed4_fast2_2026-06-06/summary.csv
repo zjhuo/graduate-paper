@@ -1,0 +1,13 @@
+﻿rule_key,rule_display,uniformity_mean,enroll_reliability_mean,validate_reliability_mean,cross_condition_min_reliability_mean,mode_name,mode_display,bit_errors,bit_error_rate,zero_error_devices,avg_budget_per_bit,b4_recovery_ok,bch31_recovery_ok,b4_protocol_ok,bch31_protocol_ok
+score_only,稳定性 Top-K,0.51220703125,1.0,0.998748779296875,0.998748779296875,raw_uniform1,raw 单次采样,1,0.00048828125,7,1.0,8,8,8,8
+score_only,稳定性 Top-K,0.51220703125,1.0,0.998748779296875,0.998748779296875,enhanced_tier3716,enhanced 分层采样,1,0.00048828125,7,3.02001953125,8,8,8,8
+score_only,稳定性 Top-K,0.51220703125,1.0,0.998748779296875,0.998748779296875,enhanced_uniform3,enhanced 统一3次采样,4,0.001953125,5,3.0,8,8,8,8
+balanced_per_device,稳定性+均衡,0.5,1.0,0.998748779296875,0.998748779296875,raw_uniform1,raw 单次采样,1,0.00048828125,7,1.0,8,8,8,8
+balanced_per_device,稳定性+均衡,0.5,1.0,0.998748779296875,0.998748779296875,enhanced_tier3716,enhanced 分层采样,1,0.00048828125,7,3.02001953125,8,8,8,8
+balanced_per_device,稳定性+均衡,0.5,1.0,0.998748779296875,0.998748779296875,enhanced_uniform3,enhanced 统一3次采样,4,0.001953125,5,3.0,8,8,8,8
+cross_condition,跨噪声一致性,0.51025390625,1.0,1.0,1.0,raw_uniform1,raw 单次采样,0,0.0,8,1.0,8,8,8,8
+cross_condition,跨噪声一致性,0.51025390625,1.0,1.0,1.0,enhanced_tier3716,enhanced 分层采样,0,0.0,8,3.0,8,8,8,8
+cross_condition,跨噪声一致性,0.51025390625,1.0,1.0,1.0,enhanced_uniform3,enhanced 统一3次采样,0,0.0,8,3.0,8,8,8,8
+recovery_oriented,根密钥恢复导向规则,0.5,1.0,1.0,1.0,raw_uniform1,raw 单次采样,0,0.0,8,1.0,8,8,8,8
+recovery_oriented,根密钥恢复导向规则,0.5,1.0,1.0,1.0,enhanced_tier3716,enhanced 分层采样,0,0.0,8,3.0,8,8,8,8
+recovery_oriented,根密钥恢复导向规则,0.5,1.0,1.0,1.0,enhanced_uniform3,enhanced 统一3次采样,0,0.0,8,3.0,8,8,8,8

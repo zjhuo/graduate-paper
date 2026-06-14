@@ -1,0 +1,2 @@
+﻿board_id,session_id,temperature_label,supply_label,selection_mode,challenge_index,challenge_hex,repeat_index,raw_resp_bit,raw_resp_valid,reference_resp_bit,n_rep_target,notes
+board_001,session_2026_06_04_rt,room,nominal,global_shared,0,003F9CF0BCF3D599,0,1,1,1,5,example row

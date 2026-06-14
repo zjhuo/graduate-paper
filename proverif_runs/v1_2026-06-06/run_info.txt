@@ -1,0 +1,6 @@
+﻿model_path=D:\zijin\ProVerif最小模型-v1-2026-06-02.pv
+archived_model_path=D:\zijin\proverif_runs\v1_2026-06-06\model.pv
+run_date=2026-06-06
+tool_path=D:\zijin\proverif\proverif2.05\proverif.exe
+tool_version_hint=proverif2.05 (from install directory name)
+model_sha256=42F800B84C4BEFC0EBBD329228F79B2024DD1244AC37C29293F82443716147CE

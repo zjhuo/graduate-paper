@@ -1,0 +1,61 @@
+{
+  "golden_source": {
+    "tb": "D:\\zijin\\rtl\\tb\\iotpufs_terminal_top_tb.sv",
+    "regression_tb": "D:\\zijin\\rtl\\tb\\iotpufs_terminal_top_regression_tb.sv",
+    "rtl_spongent": "D:\\zijin\\rtl\\spongent_core_stub.sv",
+    "python_ref": "D:\\zijin\\scripts\\spongent_ref.py"
+  },
+  "assumptions": {
+    "response_source": "standard_tb sample_counter_q[0] fixed/simulated source",
+    "n_rep": 5,
+    "helper_mask": "all ones",
+    "helper_xor": "all zeros",
+    "device_id_mode": "fixed_16_byte_raw_field",
+    "padding_rule": "SPONGENT r=8 => append one byte 0x80",
+    "fixed_zero_field_after_label_hex": "00",
+    "fe_kdf_suffix_field_hex": "B0",
+    "kdf_counter_mode": "no incrementing multi-block KDF counter in current RTL; message contains a fixed single-byte 0x00 field after label"
+  },
+  "message_bits": {
+    "bit_length": 176,
+    "pack_bits_hex": "2544A89512A2544A89512A2544A89512A2544A89512A",
+    "vector_display_hex": "548A91522A4548A91522A4548A91522A4548A91522A4",
+    "note": "pack_bits_hex is the true SPONGENT input byte order; vector_display_hex matches Verilog %h display order for message_bits_hat[175:0]."
+  },
+  "messages": {
+    "checksum_message_hex": "50554676312046452048616D6D696E673136313120636865636B73756D0A4445564943455F3030300000000000010A00112233445566778899AABBCCDDEEFF2544A89512A2544A89512A2544A89512A2544A89512A",
+    "fe_kdf_message_hex": "000E50554676312D53504F4E47454E5400034B444600162544A89512A2544A89512A2544A89512A2544A89512A001246455F48414D4D494E47313631315F4B455900010000104445564943455F303030000000000001001000112233445566778899AABBCCDDEEFF0001B0",
+    "r_virtual_message_hex": "000E50554676312D53504F4E47454E5400034B44460010F7568117C93728F72CA4886F766F3AC30009525F7669727475616C0001000010EABC8A517BC9C497A063A2C0E5CEB0810010199D985A6675DD1EB87880FB7B399FEE",
+    "h_tag_message_hex": "000E50554676312D53504F4E47454E5400034B444600101B18EEA84658740930633527960A40330005485F74616700010000101B7D12F8469162DA6ED72010C60A9CB00010ABF82BCE5E84F78F1E3D53F079C3B39D",
+    "s_tag_message_hex": "000E50554676312D53504F4E47454E5400034B44460010FC3888174C4AAC71B797D3B692EB7C4F000753727641757468000100",
+    "checksum_concat": "CHECKSUM_PREFIX || DEVICE_ID || 0x0A || SALT || pack_bits(message_bits)",
+    "fe_kdf_concat": "len(BRAND)||BRAND||len(DOMAIN)||DOMAIN||len(MSG)||MSG||len(LABEL)||LABEL||len(1)||0x00||len(DEVICE_ID)||DEVICE_ID||len(SALT)||SALT||len(1)||0xB0",
+    "h_tag_concat": "len(BRAND)||BRAND||len(DOMAIN)||DOMAIN||len(R_virtual)||R_virtual||len(H_tag)||H_tag||len(1)||0x00||len(NONCE_S)||NONCE_S||len(NONCE_D)||NONCE_D",
+    "s_tag_concat": "len(BRAND)||BRAND||len(DOMAIN)||DOMAIN||len(SK)||SK||len(SrvAuth)||SrvAuth||len(1)||0x00"
+  },
+  "derived": {
+    "checksum_hex": "28F6A05B433199F5A0D4801F23939CF0",
+    "key_hex": "F7568117C93728F72CA4886F766F3AC3",
+    "r_virtual_hex": "1B18EEA84658740930633527960A4033",
+    "sk_hex": "FC3888174C4AAC71B797D3B692EB7C4F",
+    "h_tag_hex": "08CAEB2004860A4EB6C64A1F016E4AD0",
+    "s_tag_hex": "6BE0336CEA1FCF61D899F68D71CB04E9"
+  },
+  "checks": {
+    "checksum_match": true,
+    "key_match": true,
+    "h_tag_match": true,
+    "s_tag_match": true
+  },
+  "expected": {
+    "checksum_hex": "28F6A05B433199F5A0D4801F23939CF0",
+    "key_hex": "F7568117C93728F72CA4886F766F3AC3",
+    "h_tag_hex": "08CAEB2004860A4EB6C64A1F016E4AD0",
+    "s_tag_hex": "6BE0336CEA1FCF61D899F68D71CB04E9"
+  },
+  "not_checked_against_explicit_golden": [
+    "r_virtual_hex",
+    "sk_hex"
+  ],
+  "boundary": "This is a golden-vector alignment self-test for the offline toolchain. It is not a real PUF measurement and does not prove real-PUF authentication success."
+}

@@ -1,0 +1,21 @@
+﻿{
+  "manifest_version": "real_puf_binding_manifest_0.1",
+  "selection_mode": "global_shared",
+  "challenge_table_version": "restricted_subset_v1",
+  "boards": [
+    {
+      "board_id": "board_001",
+      "session_id": "session_2026_06_04_rt",
+      "temperature_label": "room",
+      "supply_label": "nominal",
+      "raw_samples_csv": "templates/real_puf_raw_samples_template.csv",
+      "aggregate_summary_csv": "templates/real_puf_aggregate_summary_template.csv",
+      "fe_auth_summary_csv": "templates/real_puf_fe_auth_summary_template.csv",
+      "helper_xor_file": null,
+      "helper_mask_file": null,
+      "checksum_file": null,
+      "s_tag_file": null,
+      "notes": "placeholder template before real board sampling"
+    }
+  ]
+}

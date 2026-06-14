@@ -1,0 +1,2 @@
+﻿board_id,session_id,temperature_label,supply_label,selection_mode,total_challenges,n_rep,aggregate_ber,fe_recover_success,checksum_match,auth_pass,k_hat_hex,h_tag_hex,cycles_start_to_done,clock_freq_mhz,latency_us,notes
+board_001,session_2026_06_04_rt,room,nominal,global_shared,256,5,0.000000,1,1,1,f7568117c93728f72ca4886f766f3ac3,08caeb2004860a4eb6c64a1f016e4ad0,1284,50,25.680,example row

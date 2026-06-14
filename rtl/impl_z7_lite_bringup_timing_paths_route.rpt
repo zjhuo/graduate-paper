@@ -1,0 +1,1396 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Mon Jun  1 23:46:01 2026
+| Host         : DESKTOP-HPD7IAC running 64-bit major release  (build 9200)
+| Command      : report_timing -max_paths 20 -file impl_z7_lite_bringup_timing_paths_route.rpt
+| Design       : iotpufs_terminal_board_bringup_top
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-----------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             10.083ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[61]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.554ns  (logic 1.681ns (17.594%)  route 7.873ns (82.406%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.890ns = ( 24.890 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.486    14.894    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[61]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.497    24.890    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[61]/C
+                         clock pessimism              0.291    25.180    
+                         clock uncertainty           -0.035    25.145    
+    SLICE_X12Y18         FDCE (Setup_fdce_C_CE)      -0.169    24.976    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[61]
+  -------------------------------------------------------------------
+                         required time                         24.976    
+                         arrival time                         -14.894    
+  -------------------------------------------------------------------
+                         slack                                 10.083    
+
+Slack (MET) :             10.083ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[62]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.554ns  (logic 1.681ns (17.594%)  route 7.873ns (82.406%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.890ns = ( 24.890 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.486    14.894    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[62]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.497    24.890    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[62]/C
+                         clock pessimism              0.291    25.180    
+                         clock uncertainty           -0.035    25.145    
+    SLICE_X12Y18         FDCE (Setup_fdce_C_CE)      -0.169    24.976    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[62]
+  -------------------------------------------------------------------
+                         required time                         24.976    
+                         arrival time                         -14.894    
+  -------------------------------------------------------------------
+                         slack                                 10.083    
+
+Slack (MET) :             10.083ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[70]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.554ns  (logic 1.681ns (17.594%)  route 7.873ns (82.406%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.890ns = ( 24.890 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.486    14.894    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[70]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.497    24.890    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[70]/C
+                         clock pessimism              0.291    25.180    
+                         clock uncertainty           -0.035    25.145    
+    SLICE_X12Y18         FDCE (Setup_fdce_C_CE)      -0.169    24.976    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[70]
+  -------------------------------------------------------------------
+                         required time                         24.976    
+                         arrival time                         -14.894    
+  -------------------------------------------------------------------
+                         slack                                 10.083    
+
+Slack (MET) :             10.083ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[79]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.554ns  (logic 1.681ns (17.594%)  route 7.873ns (82.406%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.159ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.890ns = ( 24.890 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.486    14.894    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[79]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.497    24.890    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y18         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[79]/C
+                         clock pessimism              0.291    25.180    
+                         clock uncertainty           -0.035    25.145    
+    SLICE_X12Y18         FDCE (Setup_fdce_C_CE)      -0.169    24.976    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[79]
+  -------------------------------------------------------------------
+                         required time                         24.976    
+                         arrival time                         -14.894    
+  -------------------------------------------------------------------
+                         slack                                 10.083    
+
+Slack (MET) :             10.103ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[28]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.539ns  (logic 1.681ns (17.622%)  route 7.858ns (82.378%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.154ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.895ns = ( 24.895 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.471    14.878    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[28]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.502    24.895    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[28]/C
+                         clock pessimism              0.291    25.185    
+                         clock uncertainty           -0.035    25.150    
+    SLICE_X10Y14         FDCE (Setup_fdce_C_CE)      -0.169    24.981    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[28]
+  -------------------------------------------------------------------
+                         required time                         24.981    
+                         arrival time                         -14.878    
+  -------------------------------------------------------------------
+                         slack                                 10.103    
+
+Slack (MET) :             10.103ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[36]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.539ns  (logic 1.681ns (17.622%)  route 7.858ns (82.378%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.154ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.895ns = ( 24.895 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.471    14.878    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[36]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.502    24.895    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[36]/C
+                         clock pessimism              0.291    25.185    
+                         clock uncertainty           -0.035    25.150    
+    SLICE_X10Y14         FDCE (Setup_fdce_C_CE)      -0.169    24.981    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[36]
+  -------------------------------------------------------------------
+                         required time                         24.981    
+                         arrival time                         -14.878    
+  -------------------------------------------------------------------
+                         slack                                 10.103    
+
+Slack (MET) :             10.103ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[44]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.539ns  (logic 1.681ns (17.622%)  route 7.858ns (82.378%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.154ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.895ns = ( 24.895 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.471    14.878    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[44]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.502    24.895    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X10Y14         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[44]/C
+                         clock pessimism              0.291    25.185    
+                         clock uncertainty           -0.035    25.150    
+    SLICE_X10Y14         FDCE (Setup_fdce_C_CE)      -0.169    24.981    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[44]
+  -------------------------------------------------------------------
+                         required time                         24.981    
+                         arrival time                         -14.878    
+  -------------------------------------------------------------------
+                         slack                                 10.103    
+
+Slack (MET) :             10.151ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[91]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.439ns  (logic 1.681ns (17.809%)  route 7.758ns (82.191%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.170ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.879ns = ( 24.879 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.371    14.778    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X14Y23         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[91]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.486    24.879    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X14Y23         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[91]/C
+                         clock pessimism              0.291    25.169    
+                         clock uncertainty           -0.035    25.134    
+    SLICE_X14Y23         FDCE (Setup_fdce_C_CE)      -0.205    24.929    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[91]
+  -------------------------------------------------------------------
+                         required time                         24.929    
+                         arrival time                         -14.778    
+  -------------------------------------------------------------------
+                         slack                                 10.151    
+
+Slack (MET) :             10.166ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[68]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.434ns  (logic 1.681ns (17.818%)  route 7.753ns (82.182%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.366    14.774    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[68]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[68]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X13Y20         FDCE (Setup_fdce_C_CE)      -0.205    24.939    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[68]
+  -------------------------------------------------------------------
+                         required time                         24.939    
+                         arrival time                         -14.774    
+  -------------------------------------------------------------------
+                         slack                                 10.166    
+
+Slack (MET) :             10.166ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[87]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.434ns  (logic 1.681ns (17.818%)  route 7.753ns (82.182%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.366    14.774    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[87]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[87]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X13Y20         FDCE (Setup_fdce_C_CE)      -0.205    24.939    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[87]
+  -------------------------------------------------------------------
+                         required time                         24.939    
+                         arrival time                         -14.774    
+  -------------------------------------------------------------------
+                         slack                                 10.166    
+
+Slack (MET) :             10.166ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[93]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.434ns  (logic 1.681ns (17.818%)  route 7.753ns (82.182%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.366    14.774    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[93]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[93]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X13Y20         FDCE (Setup_fdce_C_CE)      -0.205    24.939    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[93]
+  -------------------------------------------------------------------
+                         required time                         24.939    
+                         arrival time                         -14.774    
+  -------------------------------------------------------------------
+                         slack                                 10.166    
+
+Slack (MET) :             10.166ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[95]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.434ns  (logic 1.681ns (17.818%)  route 7.753ns (82.182%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.366    14.774    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[95]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X13Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[95]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X13Y20         FDCE (Setup_fdce_C_CE)      -0.205    24.939    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[95]
+  -------------------------------------------------------------------
+                         required time                         24.939    
+                         arrival time                         -14.774    
+  -------------------------------------------------------------------
+                         slack                                 10.166    
+
+Slack (MET) :             10.189ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[76]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.447ns  (logic 1.681ns (17.795%)  route 7.766ns (82.205%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.378    14.786    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X10Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[76]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X10Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[76]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X10Y20         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[76]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.786    
+  -------------------------------------------------------------------
+                         slack                                 10.189    
+
+Slack (MET) :             10.189ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[84]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.447ns  (logic 1.681ns (17.795%)  route 7.766ns (82.205%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.378    14.786    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X10Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[84]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X10Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[84]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X10Y20         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[84]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.786    
+  -------------------------------------------------------------------
+                         slack                                 10.189    
+
+Slack (MET) :             10.190ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[69]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.446ns  (logic 1.681ns (17.796%)  route 7.765ns (82.204%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.377    14.785    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[69]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[69]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y19         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[69]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.785    
+  -------------------------------------------------------------------
+                         slack                                 10.190    
+
+Slack (MET) :             10.190ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[77]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.446ns  (logic 1.681ns (17.796%)  route 7.765ns (82.204%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.377    14.785    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[77]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[77]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y19         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[77]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.785    
+  -------------------------------------------------------------------
+                         slack                                 10.190    
+
+Slack (MET) :             10.190ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[78]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.446ns  (logic 1.681ns (17.796%)  route 7.765ns (82.204%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.377    14.785    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[78]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[78]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y19         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[78]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.785    
+  -------------------------------------------------------------------
+                         slack                                 10.190    
+
+Slack (MET) :             10.190ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[85]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.446ns  (logic 1.681ns (17.796%)  route 7.765ns (82.204%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.377    14.785    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[85]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y19         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[85]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y19         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[85]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.785    
+  -------------------------------------------------------------------
+                         slack                                 10.190    
+
+Slack (MET) :             10.225ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[106]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.411ns  (logic 1.681ns (17.861%)  route 7.730ns (82.139%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.343    14.750    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[106]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[106]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y20         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[106]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.751    
+  -------------------------------------------------------------------
+                         slack                                 10.225    
+
+Slack (MET) :             10.225ns  (required time - arrival time)
+  Source:                 u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[82]/CE
+                            (rising edge-triggered cell FDCE clocked by sys_clk  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (sys_clk rise@20.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        9.411ns  (logic 1.681ns (17.861%)  route 7.730ns (82.139%))
+  Logic Levels:           8  (LUT3=1 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.160ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.889ns = ( 24.889 - 20.000 ) 
+    Source Clock Delay      (SCD):    5.339ns
+    Clock Pessimism Removal (CPR):    0.291ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    N18                                               0.000     0.000 r  clk_i (IN)
+                         net (fo=0)                   0.000     0.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.568    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     3.669 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.670     5.339    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X27Y11         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y11         FDCE (Prop_fdce_C_Q)         0.456     5.795 r  u_iotpufs_terminal_top/u_spongent_core_stub/phase_q_reg[0]/Q
+                         net (fo=40, routed)          2.065     7.860    u_iotpufs_terminal_top/u_spongent_core_stub/phase_q[0]
+    SLICE_X27Y15         LUT3 (Prop_lut3_I0_O)        0.154     8.014 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44/O
+                         net (fo=1, routed)           0.501     8.515    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_44_n_0
+    SLICE_X26Y15         LUT6 (Prop_lut6_I4_O)        0.327     8.842 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31/O
+                         net (fo=1, routed)           0.290     9.132    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_31_n_0
+    SLICE_X27Y14         LUT6 (Prop_lut6_I0_O)        0.124     9.256 f  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14/O
+                         net (fo=26, routed)          1.075    10.331    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_14_n_0
+    SLICE_X27Y16         LUT5 (Prop_lut5_I1_O)        0.124    10.455 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36/O
+                         net (fo=10, routed)          0.845    11.300    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_36_n_0
+    SLICE_X28Y15         LUT5 (Prop_lut5_I3_O)        0.124    11.424 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33/O
+                         net (fo=1, routed)           0.670    12.094    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_33_n_0
+    SLICE_X28Y15         LUT6 (Prop_lut6_I3_O)        0.124    12.218 r  u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15/O
+                         net (fo=3, routed)           0.589    12.808    u_iotpufs_terminal_top/u_spongent_core_stub/seg_step_q[4]_i_15_n_0
+    SLICE_X29Y13         LUT5 (Prop_lut5_I3_O)        0.124    12.932 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3/O
+                         net (fo=9, routed)           0.352    13.284    u_iotpufs_terminal_top/u_spongent_core_stub/digest_idx_q[3]_i_3_n_0
+    SLICE_X27Y12         LUT6 (Prop_lut6_I5_O)        0.124    13.408 r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1/O
+                         net (fo=120, routed)         1.343    14.750    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q[119]_i_1_n_0
+    SLICE_X12Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[82]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)   20.000    20.000 r  
+    N18                                               0.000    20.000 r  clk_i (IN)
+                         net (fo=0)                   0.000    20.000    clk_i
+    N18                  IBUF (Prop_ibuf_I_O)         1.421    21.421 r  clk_i_IBUF_inst/O
+                         net (fo=1, routed)           1.880    23.301    clk_i_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    23.392 r  clk_i_IBUF_BUFG_inst/O
+                         net (fo=2004, routed)        1.496    24.889    u_iotpufs_terminal_top/u_spongent_core_stub/clk_i_IBUF_BUFG
+    SLICE_X12Y20         FDCE                                         r  u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[82]/C
+                         clock pessimism              0.291    25.179    
+                         clock uncertainty           -0.035    25.144    
+    SLICE_X12Y20         FDCE (Setup_fdce_C_CE)      -0.169    24.975    u_iotpufs_terminal_top/u_spongent_core_stub/digest_q_reg[82]
+  -------------------------------------------------------------------
+                         required time                         24.975    
+                         arrival time                         -14.751    
+  -------------------------------------------------------------------
+                         slack                                 10.225    
+
+
+
+
